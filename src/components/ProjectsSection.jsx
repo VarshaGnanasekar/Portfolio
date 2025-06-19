@@ -1,8 +1,10 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import p1Image from "@/assets/p3.webp";
 import p2Image from "@/assets/p2.avif";
-
-
+import p3Image from "@/assets/p3.jpg";
+import p4Image from "@/assets/p4.png";
+import p5Image from "@/assets/p5.webp";
+import p6Image from "@/assets/p6.jpg";
 
 const projects = [
  
@@ -25,6 +27,47 @@ const projects = [
     tags: ["C"],
     demoUrl: "#",
     githubUrl: "https://github.com/VarshaGnanasekar/JOSAA",
+  },
+  {
+    id: 3,
+    title: "Hospital Management system",
+    description:
+      "The Hospital Management System is a Java-based console application that manages core hospital operations like patient registration, doctor assignment, and admin access.",
+
+    image: p3Image,
+    tags: ["Java",],
+    demoUrl: "#",
+    githubUrl: "https://github.com/VarshaGnanasekar/HospitalManagementSystem",
+  },
+  {
+    id: 4,
+    title: "Suduko-Solver",
+    description:
+     "This project is a Sudoku game built using Python and Pygame. It features an interactive 9x9 grid where users can play Sudoku with different difficulty levels (Easy to Expert).",
+    image: p4Image,
+    tags: ["Python","Pygame"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/VarshaGnanasekar/sudokosaga",
+  },
+  {
+    id: 5,
+    title: "Quick-Quiz",
+    description:
+     "This project is a Quiz app that allows user to answer multiple questions and provides the final score of the user after completing the game .",
+    image: p5Image,
+    tags: ["HTML","CSS","JS"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/VarshaGnanasekar/QUIZ_APP",
+  },
+  {
+    id: 5,
+    title: "Collect the square",
+    description:
+    "This is an interactive Pygame-based arcade game where the player controls a square character using keyboard arrows to collect randomly positioned red items within a limited time.",
+    image: p6Image,
+    tags: ["Python","Pygame"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/VarshaGnanasekar/collect_the_squares",
   }
 ];
 
