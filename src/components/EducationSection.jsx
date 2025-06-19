@@ -8,7 +8,7 @@ export const EducationSection = () => {
       title: "Fatima Matriculation Hr. Sec. School",
       subtitle: "1st – 12th Grade",
       details: [
-        "10th Grade: 499/500 (99.8%)" ,
+        "10th Grade: 499/500 (99.8%)",
         "12th Grade: 580/600 (96.7%)"
       ],
       date: "2008 – 2022",
@@ -39,24 +39,27 @@ export const EducationSection = () => {
   ];
 
   return (
-    <section id="education" className="py-24 px-4 bg-gradient-to-b from-secondary/5 to-background overflow-x-hidden">
+    <section
+      id="education"
+      className="py-16 px-4 sm:px-6 md:py-24 bg-gradient-to-b from-secondary/5 to-background overflow-x-hidden"
+    >
       <div className="container mx-auto max-w-7xl">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-16 text-center"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center"
         >
           My <span className="text-primary">Education</span> Journey
         </motion.h2>
 
-        {/* Horizontal Timeline */}
+        {/* Timeline */}
         <div className="relative">
-          {/* Timeline path line */}
-          <div className="absolute left-0 right-0 top-1/2 h-1 bg-primary/30 rounded-full -translate-y-1/2"></div>
+          {/* Timeline path line for desktop only */}
+          <div className="hidden md:block absolute left-0 right-0 top-1/2 h-1 bg-primary/30 rounded-full -translate-y-1/2"></div>
 
-          <div className="relative flex flex-row items-center justify-between gap-8 px-8 py-12 overflow-x-auto snap-x snap-mandatory">
+          <div className="relative flex flex-col md:flex-row items-center md:justify-between gap-8 px-2 md:px-8 py-8 md:py-12 overflow-x-auto md:overflow-visible snap-x md:snap-none snap-mandatory">
             {education.map((item, index) => (
               <motion.div
                 key={index}
@@ -64,18 +67,18 @@ export const EducationSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className="relative snap-center min-w-[300px] flex-shrink-0"
+                className="relative snap-center w-full md:min-w-[300px] md:max-w-sm flex-shrink-0"
               >
-                {/* Timeline dot connector */}
+                {/* Timeline icon dot */}
                 <div className="absolute left-1/2 -top-8 -translate-x-1/2 w-6 h-6 bg-background border-4 border-primary rounded-full flex items-center justify-center z-10">
                   {item.icon}
                 </div>
 
-                {/* Milestone dots */}
-                <div className="absolute left-1/2 -top-4 -translate-x-1/2 w-full flex justify-around">
+                {/* Milestone dots (desktop only) */}
+                <div className="hidden md:flex absolute left-1/2 -top-4 -translate-x-1/2 w-full justify-around">
                   {item.milestones.map((_, dotIndex) => (
-                    <div 
-                      key={dotIndex} 
+                    <div
+                      key={dotIndex}
                       className="w-2 h-2 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"
                     />
                   ))}
@@ -88,9 +91,9 @@ export const EducationSection = () => {
                 >
                   <div className="flex flex-col h-full">
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-foreground mb-1">{item.title}</h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground mb-1">{item.title}</h3>
                       <p className="text-sm text-muted-foreground mb-3">{item.subtitle}</p>
-                      
+
                       <ul className="list-disc pl-5 text-sm text-foreground space-y-1 mb-4">
                         {item.details.slice(0, 2).map((detail, i) => (
                           <li key={i}>{detail}</li>
@@ -98,27 +101,18 @@ export const EducationSection = () => {
                       </ul>
                     </div>
 
-                    {/* Date badge */}
                     <div className="mt-auto">
                       <div className="text-xs font-medium bg-primary/10 text-primary px-3 py-1 rounded-full inline-block">
                         {item.date}
                       </div>
                     </div>
-
-                    
-
-
                   </div>
                 </motion.div>
               </motion.div>
-
-              
             ))}
           </div>
         </div>
       </div>
     </section>
-
-    
   );
 };
